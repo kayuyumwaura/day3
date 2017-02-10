@@ -5,34 +5,26 @@ class Binary_Search(object):
     object.__init__(self, self.list)
     self.length = len(self.list) - 1
 
-  def search(self, search_element):
+  def search(self, number):
+    total = 0
     start = 0
     count = 0
-    end = len(self.list_of_numbers) - 1
-    output_dict = {'count':count, 'index':0 }
+    end = len(self.list) - 1
+    output_dict = {'count':count, 'index':0, 'len':length }
 
-    if search_element not in self.list_of_numbers:
+    if number not in self.list:
       output_dict['index'] = -1
       return output_dict
     else:
       midpoint = (start + end)/2
-      if self.list_of_numbers[start] == search_element:
+      if self.list[start] == number:
         output_dict['index'] = start
         return output_dict
-      elif self.list_of_numbers[end] == search_element:
+      elif self.list[end] == number:
         output_dict['index'] = end
         return output_dict
-      elif self.list_of_numbers[midpoint] == search_element:
+      elif self.list[midpoint] == number:
         output_dict['index'] == midpoint
         output_dict['count'] +=1
       else:
-        if search_element <self.list_of_numbers[midpoint]:
-          output_dict['count'] += 1
-          first = midpoint - 1
-          output_dict['index'] = self.list_of_numbers.index(search_element)
-          return output_dict
-        else:
-          output_dict['count'] += 1
-          first = midpoint + 1
-          output_dict['index'] = self.list_of_numbers.index(search_element)
-          return output_dict
+        
