@@ -1,10 +1,13 @@
+#ceate a function to return a list of numbers
 class Binary_Search(object):
+  if len (object) == 0:
+    return false
   
   def __init__(self, length, step):
-    self.list = range(0+step, list*step + 1  , step)
-    object.__init__(self, self.list)
+    self.list = range(0+step, + 1  , step) 
     self.length = len(self.list) - 1
 
+#a function that returns the count, index and length
   def search(self, number):
     total = 0
     start = 0
@@ -12,9 +15,10 @@ class Binary_Search(object):
     end = len(self.list) - 1
     output_dict = {'count':count, 'index':0, 'len':length }
 
+    #uses divide and conquer to search for the number
     if number not in self.list:
       output_dict['index'] = -1
-      return output_dict
+      return false
     else:
       midpoint = (start + end)/2
       if self.list[start] == number:
@@ -23,8 +27,5 @@ class Binary_Search(object):
       elif self.list[end] == number:
         output_dict['index'] = end
         return output_dict
-      elif self.list[midpoint] == number:
-        output_dict['index'] == midpoint
-        output_dict['count'] +=1
       else:
-        
+        False
